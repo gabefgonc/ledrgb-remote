@@ -1,20 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import styled from "styled-components/native";
+import { ButtonGrid } from "./src/components/ButtonGrid/ButtonGrid";
+import { BluetoothSheet } from "./src/components/BluetoothSheet/BluetoothSheet";
+import { gestureHandlerRootHOC } from "react-native-gesture-handler";
 
-export default function App() {
+const Container = styled.View`
+  background-color: #010101;
+`;
+
+function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+    <Container>
+      <ButtonGrid />
+      <BluetoothSheet />
       <StatusBar style="auto" />
-    </View>
+    </Container>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default gestureHandlerRootHOC(App);
